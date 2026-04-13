@@ -1,5 +1,16 @@
 package com.cst438.controller;
 
+import java.util.Random;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import com.cst438.domain.*;
 import com.cst438.dto.*;
 import com.cst438.service.GradebookServiceProxy;
@@ -11,6 +22,11 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.EntityExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import com.cst438.domain.Section;
+import com.cst438.domain.SectionRepository;
+import com.cst438.dto.LoginDTO;
+import com.cst438.dto.SectionDTO;
+import com.cst438.service.GradebookServiceProxy;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;

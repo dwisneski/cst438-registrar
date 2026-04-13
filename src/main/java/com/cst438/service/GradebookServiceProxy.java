@@ -9,6 +9,11 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import com.cst438.domain.Enrollment;
+import com.cst438.domain.EnrollmentRepository;
+import com.cst438.dto.EnrollmentDTO;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Service
 public class GradebookServiceProxy {
 

@@ -1,20 +1,29 @@
 package com.cst438.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="enrollment")
 public class Enrollment {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="enrollment_id")
     int enrollmentId;
     String grade;
 
     @ManyToOne
-    @JoinColumn(name="section_no", nullable=false)
+    @JoinColumn(name="section_no", referencedColumnName="section_no")
     private Section section;
 
     @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
+    @JoinColumn(name="user_id", referencedColumnName="id")
     private User student;
 
     public int getEnrollmentId() {

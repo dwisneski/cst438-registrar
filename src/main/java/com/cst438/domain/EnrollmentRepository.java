@@ -1,5 +1,10 @@
 package com.cst438.domain;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -15,4 +20,5 @@ public interface EnrollmentRepository extends CrudRepository<Enrollment, Integer
 
     @Query("select e from Enrollment e where e.section.sectionNo=:sectionNo and e.student.id=:studentId")
     Enrollment findEnrollmentBySectionNoAndStudentId(int sectionNo, int studentId);
+
 }

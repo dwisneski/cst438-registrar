@@ -10,14 +10,14 @@ public record SectionDTO(
 
         // only input fields that are not validated in Section controller
         // are validated here
-        int secNo,
-        int year,
+        Integer secNo,
+        Integer year,
         String semester,
         String courseId,
         String title,
         @NotNull(message="secId required")
         @Positive(message="secId must be positive integer")
-        int secId,
+        Integer secId,
         @NotNull(message="building required")
         @NotBlank(message="building cannot be blank")
         @Size(max=10, message="building max length 10")

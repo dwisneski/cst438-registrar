@@ -8,7 +8,7 @@ import jakarta.validation.constraints.*;
  */
 public record UserDTO (
 
-        int id,
+        Integer id,
         @NotNull(message="name required")
         @NotBlank(message="name cannot be blank")
         @Size(max=50, message="name max length 50")

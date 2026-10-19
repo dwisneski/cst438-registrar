@@ -6,13 +6,11 @@ import com.cst438.service.GradebookServiceProxy;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.reactive.server.EntityExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
-
-import java.util.Random;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -20,6 +18,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureWebTestClient
 public class SectionControllerUnitTest {
 
     @Autowired
@@ -32,9 +31,7 @@ public class SectionControllerUnitTest {
     // for method that returns void, the mock method records the call but does nothing
     @MockitoBean
     GradebookServiceProxy gradebookService;
-    Random random = new Random();
-
-    @Test
+     @Test
     public void sectionCreateUpdateDelete() throws Exception {
 
         // login as admin and get the security token

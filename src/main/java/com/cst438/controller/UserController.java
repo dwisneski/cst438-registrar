@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -28,12 +29,12 @@ public class UserController {
 
     private final GradebookServiceProxy gradebook;
 
-    private final BCryptPasswordEncoder encoder;
+    private final PasswordEncoder encoder;
 
     public UserController(
             UserRepository userRepository,
             GradebookServiceProxy gradebook,
-            BCryptPasswordEncoder encoder
+            PasswordEncoder encoder
     ) {
         this.userRepository = userRepository;
         this.gradebook = gradebook;

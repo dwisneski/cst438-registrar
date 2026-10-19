@@ -1,7 +1,7 @@
 package com.cst438.dto;
 public record UserPasswordDTO (
 
-        int id,
+        Integer id,
         String name,
         String email,
         String type,
